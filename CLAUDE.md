@@ -5,16 +5,19 @@ This repository contains my personal website and CV. The CV is maintained as a L
 
 ## Workflow: Updating the Website and CV
 
-When I ask you to "update the website," follow this complete workflow:
+**CRITICAL:** Whenever I ask you to "update the CV" or "update the website," you MUST always compile the PDF from the LaTeX source. The cv.pdf file on the website must always match the cv.tex source file.
+
+When I ask you to "update the website" or "update the CV," follow this complete workflow:
 
 ### 1. Update the LaTeX CV Source
 - Edit `cv.tex` with the requested changes to the CV content
 - Ensure proper LaTeX formatting and syntax
 
-### 2. Compile LaTeX to PDF
-- Run: `pdflatex cv.tex` (may need to run twice for references)
+### 2. Compile LaTeX to PDF (MANDATORY - ALWAYS DO THIS)
+- Run: `pdflatex cv.tex` (run twice for proper references)
 - Verify that `cv.pdf` was generated successfully
 - Clean up auxiliary files: `rm -f cv.aux cv.log cv.out`
+- **NEVER skip this step** - the PDF on the website must always match the .tex source
 
 ### 3. Update Website Files
 - Make any requested changes to `index.html` or other website files
@@ -24,6 +27,23 @@ When I ask you to "update the website," follow this complete workflow:
 - Stage all changes: `git add cv.tex cv.pdf index.html` (and any other modified files)
 - Commit with a descriptive message explaining the updates
 - Push to GitHub: `git push origin main`
+
+## Workflow: CV-Only Updates
+
+When I ask you to "update the CV" (without website changes), follow these steps:
+
+### 1. Update the LaTeX CV Source
+- Edit `cv.tex` with the requested changes
+
+### 2. Compile LaTeX to PDF (MANDATORY)
+- Run: `pdflatex cv.tex` twice
+- Verify `cv.pdf` was generated successfully
+- Clean up: `rm -f cv.aux cv.log cv.out`
+
+### 3. Commit and Push
+- Stage: `git add cv.tex cv.pdf`
+- Commit with descriptive message
+- Push: `git push origin main`
 
 ## Important Notes
 - Always update both the `.tex` source and the `.pdf` when making CV changes
