@@ -1,0 +1,581 @@
+
+\documentclass[10pt]{article}
+
+\usepackage{calc}
+
+\usepackage{marvosym} 
+\usepackage{hyperref}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+    
+\makeatletter
+\newlength{\bibhang}
+\setlength{\bibhang}{1em}
+\newlength{\bibsep}
+ {\@listi \global\bibsep\itemsep \global\advance\bibsep by\parsep}
+\newenvironment{bibsection}%
+        {\begin{list}{}{%
+       \setlength{\leftmargin}{\bibhang}%
+       \setlength{\itemindent}{-\leftmargin}%
+       \setlength{\itemsep}{\bibsep}%
+       \setlength{\parsep}{\z@}%
+        \setlength{\partopsep}{0pt}%
+        \setlength{\topsep}{0pt}}}
+        {\end{list}\vspace{-.6\baselineskip}}
+\makeatother
+
+
+\long\def\symbolfootnote[#1]#2{\begingroup%
+\def\thefootnote{\fnsymbol{footnote}}\footnote[#1]{#2}\endgroup}
+
+\reversemarginpar
+
+
+\usepackage[paper=letterpaper,
+            %includefoot, % Uncomment to put page number above margin
+            marginparwidth=1.2in,     % Length of section titles
+            marginparsep=.05in,       % Space between titles and text
+            margin=1in,               % 1 inch margins
+            includemp]{geometry}
+
+
+\setlength{\parindent}{0in}
+
+\usepackage[shortlabels]{enumitem}
+
+\usepackage{fancyhdr,lastpage}
+\pagestyle{fancy}
+\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfootoffset{\marginparsep+\marginparwidth}
+\newlength{\footpageshift}
+\setlength{\footpageshift}
+          {0.5\textwidth+0.5\marginparsep+0.5\marginparwidth-2in}
+\lfoot{\hspace{\footpageshift}%
+       \parbox{4in}{\, \hfill %
+                    \arabic{page} of \protect\pageref*{LastPage} % +LP
+%                    \arabic{page}                               % -LP
+                    \hfill \,}}
+
+\usepackage{color,hyperref}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.3}
+\hypersetup{colorlinks,breaklinks,
+            linkcolor=darkblue,urlcolor=darkblue,
+            anchorcolor=darkblue,citecolor=darkblue}
+
+\newcommand{\makeheading}[2][]%
+        {\hspace*{-\marginparsep minus \marginparwidth}%
+         \begin{minipage}[t]{\textwidth+\marginparwidth+\marginparsep}%
+             {\large \bfseries #2 \hfill #1}\\[-0.15\baselineskip]%
+                 \rule{\columnwidth}{1pt}%
+         \end{minipage}}
+
+
+\renewcommand{\section}[1]{\pagebreak[3]%
+    \hyphenpenalty=10000%
+    \vspace{1.3\baselineskip}%
+    \phantomsection\addcontentsline{toc}{section}{#1}%
+    \noindent\llap{\scshape\smash{\parbox[t]{\marginparwidth}{\raggedright #1}}}%
+    \vspace{-\baselineskip}\par}
+
+\newenvironment{outerlist}[1][\enskip\textbullet]%
+        {\begin{itemize}[#1,leftmargin=*]}{\end{itemize}%
+         \vspace{-.6\baselineskip}}
+
+
+\newenvironment{lonelist}[1][\enskip\textbullet]%
+        {\begin{list}{#1}{%
+        \setlength{\partopsep}{0pt}%
+        \setlength{\topsep}{0pt}}}
+        {\end{list}\vspace{-.6\baselineskip}}
+
+\newenvironment{innerlist}[1][\enskip\textbullet]%
+        {\begin{itemize}[#1,leftmargin=*,parsep=0pt,itemsep=0pt,topsep=0pt,partopsep=0pt]}
+        {\end{itemize}}
+
+
+\newenvironment{loneinnerlist}[1][\enskip\textbullet]%
+        {\begin{itemize}[#1,leftmargin=*,parsep=0pt,itemsep=0pt,topsep=0pt,partopsep=0pt]}
+        {\end{itemize}\vspace{-.6\baselineskip}}
+
+\newcommand{\blankline}{\quad\pagebreak[3]}
+\newcommand{\halfblankline}{\quad\vspace{-0.5\baselineskip}\pagebreak[3]}
+
+\newcommand\doilink[1]{\href{http://dx.doi.org/#1}{#1}}
+\newcommand\doi[1]{doi:\doilink{#1}}
+
+\providecommand*\url[1]{\href{#1}{#1}}
+\renewcommand*\url[1]{\href{#1}{\texttt{#1}}}
+
+\providecommand*\email[1]{\href{mailto:#1}{#1}}
+
+\providecommand\BibTeX{{B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    \TeX}}
+\providecommand\Matlab{\textsc{Matlab}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%% Begin CV Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\makeheading{Dennis J. Zhang}
+
+
+
+
+
+\section{Contact Information}
+
+
+\newlength{\rcollength}\setlength{\rcollength}{1.85in}%
+%
+\begin{tabular}[t]{@{}p{\textwidth-\rcollength}p{\rcollength}}
+     \textit{Address:} 1 Brookings Dr. Bauer Hall 406 \\
+     St. Louis, MO 63130 USA  \\
+     \textit{E-mail:} \email{denniszhang@wustl.edu}\\
+     \textit{Website:} \url{www.denniszhang.org}
+\end{tabular}
+
+\section{Academic Position}
+\textbf{Olin Business School, Washington University in St. Louis}
+\begin{outerlist}
+        \item [] \textit{Professor of SCOT} \hfill 2025 - Present
+        \item [] \textit{Professor of Marketing} \hfill 2025 - Present
+
+    \item [] \textit{Associate Professor of Marketing} \hfill 2022 - 2025
+  	\item [] \textit{Associate Professor of SCOT} \hfill 2020 - 2025
+	\item [] \textit{Assistant Professor of Supply Chain, Operations, and Technology} \hfill 2016 - 2020
+\end{outerlist}
+
+\section{Education}
+\textbf{Kellogg School of Management, Northwestern University} \hfill 2012-2016
+\begin{outerlist}
+	\item[] Ph.D., Managerial Economics and Operations Management
+	\item[] M.S., Managerial Economics and Operations Management 
+\end{outerlist}
+
+\halfblankline
+
+\textbf{University of California, at Los Angeles (UCLA)}  \hfill 2008-2012
+\begin{outerlist}
+
+\item[] B.S., Electrical Engineering and Computer Science (Summa cum laude) 
+\item[] B.S., Mathematics (Summa cum laude) 
+\end{outerlist}
+
+\section{Research Interest} Artificial Intelligence; Machine Learning and Causal Inference; Digital Marketplace; Operations Management; Quantitative Marketing; Experiment Design; Structural Estimation.
+
+\section{Publications}
+
+\begin{itemize}
+
+    \item Mengxin Wang, Heng Zhang, Dennis J. Zhang (2026). Harnessing Large Language Models for Market Research: A Data-augumentation Approach. \emph{\bf Marketing Science}.
+
+    \item Xinyu Cao, Chenshan Hu, Jiankun Sun and Dennis J. Zhang (2026). How Forced Intervention Facilitates AI Adoption? \emph{\bf Manufacturing \& Service Operations Management}.
+
+    \item Zhiyu Zeng, Nick Clyde, Hengchen Dai, Dennis J. Zhang, Zhiwei Xu and Max Shen (2025). The Value of Customer-Related Information on Service Platforms: Evidence From a Large Field Experiment. \emph{\bf Manufacturing \& Service Operations Management}.
+
+
+    \item Zikun Ye, Zhiqi Zhang, Dennis J. Zhang, Heng Zhang, Renyu Zhang (2025). Deep Learning Based Causal Inference for Large-Scale Combinatorial Experiments: Theory and Empirical Evidence. \emph{\bf Management Science}.
+
+    \item Bing Bai, Tat Y. Chan, Dennis J. Zhang and Fuqiang Zhang (2025). The Value of Logistic Flexibility in E-commerce. \emph{\bf Management Science}.
+
+    \item Xiaoyang Long, Jiankun Sun, Hengchen Dai and Dennis J. Zhang (2024). Choice Overload with Search Cost and Anticipated Regret: Theoretical Framework and Field Evidence. \emph{\bf Manufacturing \& Service Operations Management}.
+
+
+    \item Ali Aouad, Jacob Feldman, Danny Segev and Dennis J. Zhang (2024). Click-Based MNL: Algorithmic Frameworks for Modeling Click Data in Assortment Optimization. \emph{\bf Management Science}.
+
+    \item Jun Li, Zoey Jiang and Dennis J. Zhang (2023). A High-Dimensional Choice Model for Online Retailing. \emph{\bf Management Science}.
+
+
+    \item Zhiyu Zeng, Hengchen Dai, Dennis J. Zhang, Heng Zhang, Renyu Zhang, Zuo-Jun Max Shen, Zhiwei Xu (2022). The Impact of Social Nudges on User-Generated Content on Social Network Platforms. \emph{\bf Management Science}.
+
+    \item Xinyu Cao, Dennis J. Zhang and Lei Huang (2022). The Impact of COVID-19 Pandemic on the Behavior of Online Gig Workers. \emph{\bf Manufacturing \& Service Operations Management}.
+
+    \item Bing Bai, Hengchen Dai, Dennis J. Zhang and Fuqiang Zhang (2022). The Impact of AI on Workers' Perceived Fairness: Evidence from a Field Experiment. \emph{\bf Manufacturing \& Service Operations Management}.
+    
+    \item Zikun Ye, Dennis J. Zhang, Heng Zhang, Renyu Zhang, Xin Chen and Zhiwei Xu (2022). Cold Start on Online Advertising Platforms: Data-Driven Algorithms and Field Experiments. \emph{\bf Management Science}.  
+
+    \item Joren Gijsbrechts, Robert N. Boute, Jan A. Van Mieghem and Dennis J. Zhang (2021). Can Deep Reinforcement Learning Improve Inventory Management? Performance on Dual Sourcing, Lost Sales and Multi-Echelon Problems. \emph{\bf Manufacturing \& Service Operations Management}.
+
+    \item Jake Feldman and Dennis J. Zhang (2021). Customer Choice Models versus Machine Learning: Finding Optimal Product Displays on Alibaba. \emph{\bf Operations Research}.
+
+    \item Zhenling Jiang, Tat Chan and Dennis J. Zhang (2021). Effects of Bonus on the Demand for Auto Loans and the Long-Term Consequences. \emph{\bf Journal of Marketing Research}.
+
+    \item Jiankun Sun, Dennis J. Zhang, Haoyuan Hu and Jan A. Van Mieghem (2020). Predicting Human Discretion to Adjust Algorithmic Prescription: A Large-Scale Field Experiment in Bin Packing Warehouse Operations. \emph{\bf Management Science}.
+
+    \item Zekun Liu, Dennis J. Zhang and Fuqiang Zhang (2020). Information Sharing on Retail Platforms. Forthcoming at \emph{\bf Manufacturing \& Service Operations Management}.
+
+    \item Dennis J. Zhang and Ming Hu (2020). NetEase Cloud Music Data.  Forthcoming at \emph{\bf Manufacturing \& Service Operations Management}.
+
+    \item Dennis J. Zhang, Hengchen Dai and Lingxiu Dong (2019). The Value of Pop-Up Stores on Retailing Platforms: Evidence from a Field Experiment with Alibaba. Forthcoming at \emph{\bf Management Science}.
+    
+    \item Dennis J. Zhang, Hengchen Dai and Lingxiu Dong (2019). The Long-term and Spillover Effects of Price Promotions on Retailing Platforms: Evidence from a Large Randomized Experiment on Alibaba. Forthcoming at \emph{\bf Management Science}.
+
+    \item Lamar Pierce, Laura Wang and Dennis J. Zhang (2019). Peer Bargaining and Productivity in Teams: Evidence on the Inequitable Division of Pay. Forthcoming at \emph{\bf Manufacturing \& Service Operations Management}.
+
+    \item Hengchen Dai and Dennis J. Zhang (2018). Prosocial Goal Pursuit in Crowdfunding: Evidence from Kickstarter. \emph{\bf Journal of Marketing Research}.
+
+    \item Ruomeng Cui, Jun Li and Dennis J. Zhang (2018). Reducing Discrimination with Reviews in the Sharing Economy: Evidence from Field Experiments on Airbnb. Forthcoming at \emph{\bf Management Science}.
+
+    \item Ruomeng Cui, Dennis J. Zhang and Achal Bassamboo (2017). Learning from Inventory Availability Information: Evidence from Field Experiments on Amazon. \emph{\bf Management Science}, 65(3), 1216-1235.
+
+    \item Ruomeng Cui, Antonio Moreno-Garcia, Santiago Gallino, and Dennis J. Zhang (2017). The Operational Value of Social Media Information. \emph{\bf Production and Operations Management} 27(10), 1749-1769.
+
+    \item Dennis J. Zhang, Gad Allon, and Jan A. Van Mieghem (2016). Does social interaction improve learning outcomes? Evidence from field experiments on massive open online courses. \emph{\bf Manufacturing \& Service Operations Management} 19(3), 347-367.
+  
+    \item Dennis J. Zhang, Itai Gurvich, Jan A. Van Mieghem, Eric Park, Mark V. Williams, and Robert S. Young (2016). Hospital Readmission Reduction Program: An Economic and Operational Analysis. \emph{\bf Management Science} 62(11), 3351-3371.
+
+\end{itemize}
+
+\section{Books, Practitioner and Conference Publications}
+
+\begin{itemize}
+
+    \item Maxime Cohen et al. (2025). AI in Supply Chains: Perspectives from Global Thought Leaders. \emph{Springer Series in Supply Chain Management}.
+    
+    \item Mengxin Wang, Heng Zhang, Dennis J. Zhang (2024). Harnessing Large Language Models for Market Research: A Data-augumentation Approach. \emph{2024 NeurIPS Workshop on Statistical Frontiers in LLMs and Foundation Models}
+    
+    \item Zikun Ye, Zhiqi Zhang, Dennis J. Zhang, Heng Zhang, Renyu Zhang (2023). Deep Learning Based Causal Inference for Large-Scale Combinatorial Experiments: Theory and Empirical Evidence. \emph{23th ACM Conference on Economics and Computation (EC'23)}
+
+    \item Hamsa Bastani, Dennis J. Zhang and Heng Zhang (2020). Applied Machine Learning in Operations Management. \emph{Springer Innovative Technology at the Interface of Finance and Operations}
+
+    \item Antonio Moreno, Jun Li and Dennis J. Zhang (2019). Agent Pricing in the Sharing Economy: Evidence from Airbnb. Sharing Economy: Making Supply Meet Demand. In \emph{Springer Series in Supply Chain Management}. 
+
+    \item Jun Li, Dennis J. Zhang and Ruomeng Cui (2017). A Better Way to Fight Discrimination in the Sharing Economy. \emph{Harvard Business Review}.
+
+
+    \item Dennis J. Zhang, Jiadong Wang, Shayan Garani Srinivasa, and Lara Dolecek (2011). Achieving Flexibility in LDPC Code Design by Absorbing Set Elimination. \emph{Proc. Asilomar Conference on Signals, Systems, and Computers}.
+
+
+\end{itemize}
+
+\section{Papers under Review or Revision}
+
+\begin{itemize}
+
+
+
+    \item Guangying Chen, Lu Cheng, Zhengling Qi, Tat Chan and Dennis J. Zhang. A New Estimator for Randomized Controlled Trials with Non-Compliance: Theory and Empirical Evidence. Major Revision at \emph{\bf Marketing Science}.
+        
+    \item Chenshan Hu, Xiaoyang Long, Jiankun Sun and Dennis J. Zhang. Green E-commerce: Environmental Impact of Fast Delivery. Major Revision at \emph{\bf Management Science}.
+
+    \item Nick Clyde, Bing Bai and Dennis J. Zhang. The Impact of Ride Sharing on Healthcare Access. Major Revision at \emph{\bf Management Science}.
+
+    \item Annie Shi, Tat Chan and Dennis J. Zhang. Using Algorithm Scores to Measure the Impacts of Targeted Promotional Messages. Risky Revision at \emph{\bf Journal of Marketing Research}.
+
+    \item Guangying Chen, Tat Chan and Dennis J. Zhang. The Effects of Diversity in Algorithmic Recommendations on Digital Content Consumption: A Field Experiment. Major Revision at \emph{\bf Management Science}.
+
+    \item Hengchen Dai, Xiaoyang Long and Dennis J. Zhang. Wage Transparency, Negotiation, and Reference-dependent Utility. Major Revision at \emph{\bf Organization Science}.
+
+    \item Meng Liu, Cheng Lu, Xiang Hui, Dennis J. Zhang. Referrers vs. Referees: How Do Reactivation Referral Programs Work on Social Media? Risky Revision at \emph{\bf Journal of Marketing Research}.
+
+    \item Zhiyu Zeng, Zhiqi Zhang, Dennis J. Zhang and Tat Chan. The Impact of Recommender Systems on Content Consumption and Production: Evidence from Field Experiments and Structural Modeling. Major Revision at \emph{\bf Management Science}.
+
+    \item Xinyu Cao, Shilei Luo, Dennis J. Zhang. How the Power of Pay Gets Amplified in Gig Economy. Risky Revision at \emph {\bf Journal of Marketing Research}.
+
+    \item Peibo Zhang, Xinyu Cao, Ruomeng Cui and Dennis J. Zhang. Dynamic Discrimination on Online Platforms. Major Revision at \emph {\bf Management Science}.
+
+    \item Guangying Chen, Tat Chan and Dennis J. Zhang. The Intended and Unintended Consequences of Privacy Protection in Social Media: A Large-Scale Field Experiment and Structural Analysis. Major Revision at \emph{\bf Marketing Science}.
+
+
+\end{itemize}
+
+
+    % \item Dennis J. Zhang, Yuval Salant and Jan A. Van Mieghem. Where did the time go? On the increase in airline schedule padding over 21 years. Under Revision.
+
+
+% \section{Working Papers}
+
+% \begin{enumerate}[resume]
+
+%     \item Xuan Wang, Dennis J. Zhang and Renyu Zhang. Recommender Systems on Platforms. Working Paper.
+ 
+%     \item Lamar Pierce, Laura Wang and Dennis J. Zhang. Common Origin and Prosocial Bargaining in Teams. Working Paper.
+    
+%     \item Bing Bai, Dennis J. Zhang and Fuqiang Zhang. The Value of Shipping Flexibility. Working Paper.
+
+%     \item Annie Shi, Tat Chan and Dennis J. Zhang. Using Algorithm Scores to Measure the Impacts of Targeted Promotional Messages. Working Paper.
+
+%     \item Hamsa Bastani, Dennis J. Zhang, Jiankun Sun and Yangzi Jiang. The Value of Transfer Learning in Online Retailing: Theory and Empirical Evidence. Working Paper.
+
+%     \item Hamsa Bastani, Dennis J. Zhang and Heng Zhang. Applied Machine Learning in Operations Management. Working Paper.
+
+    
+%  \end{enumerate}
+
+
+\section{Editorial Services}
+\begin{itemize}
+    \item Area Editor, Machine Learning and Data Science, \emph{\bf Operations Research}
+    \item Associate Editor, \emph{\bf M\&SOM}
+    \item Associate Editor, \emph{\bf Marketing Science}
+    \item Associate Editor, Marketing Department, \emph{\bf Management Science}
+    % \item Senior Editor, Marketing Department,  \emph{\bf Production and Operations Management}, 
+    \item Ad-hoc Referee:  \emph{Journal of Political Economy}, \emph{American Economic Review}, \emph{Marketing Science}, \emph{Operations Research}, \emph{Journal of Marketing Research}, \emph{Information System Research}, \emph{Journal of Law and Economics}, \emph{Organizational Behavior and Human Decision Processes}.
+    % \item Judge: \emph{2021 Revenue Management Data Competition}, \emph{2021 M\&SOM Data Competition},\emph{2020 M\&SOM Data Competition}, \emph{2019 M\&SOM Supply Chain SIG Conference}, \emph{2018 M\&SOM Student Competition}, \emph{2017 M\&SOM Student Competition}, \emph{2018 M\&SOM Data Competition}
+\end{itemize}
+
+\section{PhD Students}
+\begin{itemize}
+
+ \item {\bf Current Advisees}: Qinxin Chen, Sikun Xu, Cheolho Song, Shilei Luo, Peibo Zhang, Cheng Lu, Jiayi Zhang
+
+
+\item {\bf Past Advisees:}
+    \begin{enumerate}
+        \item Jiankun Sun (2019, Committee Member and JMP Coauthor), Northwestern Kellogg OM PhD., Assistant Professor of Operations Management, Imperial College London.
+        \item Zhenling Jiang (2019, Committee Member and Coauthor), WashU Olin Marketing PhD., Assistant Professor of Marketing, University of Pennsylvania.
+        \item Joren Gijsbrechts (2020, Committee Member and JMP Coauthor), KU Leuven OM PhD., Assistant Professor of Operations Management, ESADE.
+        \item Bing Bai (2023, Committee Co-Chair), WashU Olin OM PhD., Assistant Professor of Operations Management, McGill University.
+        \item Zikun Ye (2023, Committee Co-Chair), UIUC IEOR PhD., Assistant Professor of Marketing, University of Washington.
+        \item Daniel Chen (2024, Committee Member and Coauthor), Wharton OM PhD., Assistant Professor of Operations Management, Boston College.
+        \item Zack Wang (2025, Committee Member and JMP Coauthor), WashU Olin Marketing PhD., Assistant Professor of Marketing, Hong Kong University.
+        \item Zhiyu Zeng (2025, JMP Coauthor), WashU Olin Postdoc, Assistant Professor of Operations Management, Shanghai Jiaotong University.
+        \item Nick Clyde (2025, Committee Chair), WashU Olin OM PhD., Assistant Professor of Operations Management, Florida State University.
+        \item Annie Shi (2025, Committee Co-Chair), WashU Olin Marketing PhD., Assistant Professor of Marketing, University of Florida.
+        \item Chenshan Hu (2025, Committee Chair), WashU Olin OM PhD., Assistant Professor of Operations Management, University of Colorado Boulder. 
+        \item Guangying Chen (2025, Committee Co-Chair), WashU Olin Marketing PhD., Assistant Professor of Marketing, University of Southern California.
+        \item Zhiqi Zhang (2026 Expected, Committee Chair), WashU Olin OM PhD., Assistant Professor of Marketing, University of Notre Dame.
+    \end{enumerate}
+ 
+ \item {\bf Past Students (Committee Member, Not Research Advisor):}
+     \begin{enumerate}
+        \item Duo Shi (2018, Committee Member), (Tenured) Associate Professor of Operations Management, CUHK Shenzhen.
+        \item Fasheng Xu (2019, Committee Member), Assistant Professor of Operations Management, University of Connecticut.
+        \item Fan Yang (2023, Committee Member), Assistant Professor of Marketing, UCL.
+     \end{enumerate}
+\end{itemize}
+
+\section{Honors and Awards}
+
+\begin{outerlist}
+    \item {\bf Career Award}
+    \begin{enumerate}
+    
+    \item 2022 POMS Early Career Research Accomplishments Award
+    
+    \end{enumerate}
+    
+    \item {\bf Paper Award}
+    \begin{enumerate}
+
+    \item (2024) Winner, INFORMS Behavioral Operation Management Best Working Paper Competition
+
+    {\footnotesize ``Green E-Commerce: Environmental Impact of Fast Delivery"}
+
+    \item (2024) Finalist, 2024 Service Science Best Cluster Paper Award
+
+    {\footnotesize ``How Forced Intervention Facilitates Long-Term Algorithm Adoption"}
+    
+    \item (2024) Runner-up, 2024 INFORMS ISS Cluster Best Paper Award
+
+    {\footnotesize ``A New Estimator for Randomized Controlled Trials with Non-Compliance: Theory and Empirical Evidence"}
+
+    \item (2023) Second Place, 2023 CSAMSE Best Paper Award Competition
+
+    {\footnotesize ``Deep Learning Based Causal Inference for Large-Scale Combinatorial Experiments: Theory and Empirical Evidence."}
+
+    \item (2023) Finalist, 2023 Best Paper in \textbf{\textit{Operations Research}}
+    
+    {\footnotesize `Customer Choice Models versus Machine Learning: Finding Optimal Product Displays on Alibaba."}
+
+    \item (2023) Winner, 2023 Best OM Paper in \textbf{\textit{Management Science}}:
+    
+    {\footnotesize `Reducing Discrimination with Reviews in the Sharing Economy: Evidence from Field Experiments on Airbnb."}
+
+    \item (2022) Finalist, 2022 Best OM Paper in \textbf{\textit{Management Science}}:
+    
+    {\footnotesize `Learning from Inventory Availability Information: Evidence from Field Experiments on Amazon."}
+
+    \item (2022) Industry Studies Association’s 2021 Ralph Gomory Best Industry Studies Paper Award:
+    
+    {\footnotesize `Peer Bargaining and Productivity in Teams: Evidence on the Inequitable Division of Pay."}
+
+    \item (2021) Second Place, 2021 CSAMSE Best Paper Award Competition
+
+    {\footnotesize ``The Impact of AI on Workers' Perceived Fairness: Evidence from a Field Experiment."}
+    
+    \item (2021) INFORMS Revenue Management and Pricing Section Jeff McGill Student Paper Prize:
+    
+    {\footnotesize ``Cold Start to Improve Market Thickness on Online Advertising Platforms: Data-Driven Algorithms and Field Experiments."}
+    
+    
+    \item (2021) Finalist, 2021 Behavioral Operations Management Best Working Paper Award:
+    
+    {\footnotesize ``Wage Transparency, Negotiation,and Reference-dependent Utility."}
+    
+    \item (2021) Finalist, 2021 Wharton People Analytics White Paper Competition
+    
+    {\footnotesize ``The Impact of AI on Workers' Perceived Fairness: Evidence from a Field Experiment."}
+
+
+    \item (2021) Finalist, Best Accepted Papers in 2021 Academy of Management Meeting
+    
+    {\footnotesize ``The Impact of AI on Workers' Perceived Fairness: Evidence from a Field Experiment."}
+
+
+    \item (2020) Honorable Mention, M\&SOM 2020 Responsible Research Award
+
+    {\footnotesize ``Reducing Discrimination with Reviews in the Sharing Economy:  Evidence from Field Experiments on Airbnb."}
+
+
+    \item (2020) Finalist, 2020 CBOM Junior Scholar Paper Competition.
+    
+    {\footnotesize ``The Impact of AI on Workers' Perceived Fairness: Evidence from a Field Experiment."}
+
+    \item (2020) Winner, 2020 Olin Research Award. 
+        
+    {\footnotesize ``Predicting Human Discretion to Adjust Algorithmic Prescription: A Large-Scale Field Experiment in Bin Packing Warehouse Operations."}
+    
+    \item (2019) Winner, 2019 Revenue Management Practice Award
+        
+    {\footnotesize ``Taking Assortment Optimization from Theory to Practice: Evidence from Large Field Experiments on Alibaba."}
+    
+    \item (2019) Finalist, 2019 Best Service Science Paper Award Competition
+    
+    {\footnotesize ``The Spillover Effects of Employee-Customer Interactions: Field Evidence from an Online Education Platform."}
+    
+    \item (2019) Finalist, 2019 Innovative Applications in Analytics Award
+        
+    {\footnotesize ``Taking Assortment Optimization from Theory to Practice: Evidence from Large Field Experiments on Alibaba."}
+    
+    \item (2019) Winner, 2019 Olin Research Award. 
+    
+    {\footnotesize ``Taking Assortment Optimization from Theory to Practice: Evidence from Large Field Experiments on Alibaba."}
+    
+    \item (2018) Finalist, Competition at the 2018 Wharton People Analytics Conference: 
+    
+    {\footnotesize ``Peer Bargaining and Productivity in Teams: Evidence on the Inequitable Division of Pay."}
+    
+    \item (2018) Finalist, 2018 POMS Applied Research Challenge: 
+    
+    {\footnotesize ``How Do Price Promotions Affect Customer Behavior on Retailing Platforms? Evidence from a Large Randomized Experiment on Alibaba."}
+    
+    \item (2018) Finalist, 2018 POM-CBOM Junior Scholar Competition: 
+    
+    {\footnotesize ``How Do Price Promotions Affect Customer Behavior on Retailing Platforms? Evidence from a Large Randomized Experiment on Alibaba."}
+    
+    \item (2017) Winner, 2017 Behavioral Operations Management Best Working Paper Award: 
+    
+    {\footnotesize `` Reducing Discrimination with Reviews in the Sharing Economy:  Evidence from Field Experiments on Airbnb."}
+    
+    \item (2014) Winner, 2014 POMS College of Healthcare Operations Management Best Paper Award: 
+    
+    {\footnotesize ``Hospital Readmission Reduction Program: An Economic and Operational Analysis."}
+    \end{enumerate}
+    \item {\bf Service Award}
+    \begin{enumerate}
+        \item (2020) Management Science Distinguished Service Award
+        \item (2020) M\&SOM Distinguished Service Award
+        \item (2019) Management Science Distinguished Service Award
+        \item (2019) M\&SOM Distinguished Service Award
+        \item (2018) Management Science Distinguished Service Award
+        \item (2018) M\&SOM Distinguished Service Award
+        \item (2017) Management Science Distinguished Service Award
+        \item (2017) M\&SOM Distinguished Service Award
+    \end{enumerate}
+    
+    \item {\bf Teaching Award}
+    \begin{enumerate}
+        \item (2019) Reid Teaching Award---Master of Science in Business Analytics–Financial Technology
+        \item (2019) Reid Teaching Award---Master of Science in Business Analytics–Customer
+    \end{enumerate}
+\end{outerlist}
+
+% \section{Working Papers or Projects}
+% \begin{enumerate}
+%     \item Xuan Wang, Renyu Zhang and Dennis J. Zhang, ``Recommendation System on Platforms," working project.
+    
+%     \item Jiankun Sun, Dennis J. Zhang, Haoyuan Hu and Jan A. Van Mieghem, ``Incorporating Behavioral Operations in Algorithm Design: A Large-Scale Field Experiment in Bin Packing," working project.
+    
+    
+%     \item Joren Gijsbrechts, Robert Boute, Jan A. Van Mieghem and Dennis J. Zhang, ``On the Power of Deep Reinforcement Learning Algorithms to Solve Dual Sourcing Problems," working project.
+    
+%     \item Hengchen Dai and Dennis J. Zhang, ``The Spillover Effect of Customer Interaction in Services: Evidence from a Large Online Education Platform," working project.
+    
+%     \item Lamar Pierce, Laura Wang and Dennis J. Zhang, ``Social Ties and Prosociality in Firms: Evidence from Peer Bargaining over Pay," working project.
+    
+% \end{enumerate}
+
+
+
+
+
+\section{Research Presentations}
+\textbf{Invited Talks}
+
+\begin{outerlist}
+
+  \item {\bf University Invited Seminar}: 
+    \begin{innerlist}
+        \item 2025-2026: University of Toronto (Marketing), University of Toronto (OM), University of Southern California (Marketing), University of Notre Dame (Marketing), Indiana University (OM), Stanford University (Marketing), Yale University (Marketing).
+        \item 2024-2025: Fisher College of Business, Ohio State University (OM); Leeds School of Business, UC Boulder (OM); University of Florida (Marketing); IEOR-DRO Joint Seminar, Columbia University (OM); McDonough School of Business, Georgetown University (OM); Ross Business School, University of Michigan (OM); McGill Desautels Faculty of Management (OM); Chinese University of Hong Kong (OM); Rice University (OM); John Hopkins University (OM); Southern Methodist University (OM); Carnegie Mellon University (OM); Wharton, University of Pennsylvania (OM); MIT (Marketing).
+        \item 2023-2024: Kellogg School of Management, Northwestern University; Emory University Goizueta Business School; George Washington University School of Business; Questrom School of Business, Boston University; Cornell University Conference
+        \item 2022-2023: The University of Tennessee, Knoxville, University of Michigan's Ross Marketing Area, NYU Stern School of Business, University of Toronto's Rotman School of Management
+        \item 2021-2022: University of Chicago, National University of Singapore, University of California Riverside, Case Western University, Binghamton University
+        \item 2019-2020: University of California Berkeley, UIUC, University of Maryland, UT Dallas, Shanghai University of Finance and Economics, Shanghai Jiao Tong University
+        \item 2018-2019: University of Washington Foster School of Business, Johns Hopkins Carey Business School, Peking University, Guanghua School of Management, Georgia Tech Scheller College of Business, NYU Stern School of Business
+        \item 2017-2018: London Business School, Imperial College Business School, Massachusetts Institute of Technology, HKUST Business School, UCLA Management and Organization, Northwestern University, Kellogg School of Management, Cornell University, Harvard Business School, 
+        \item 2016-2017: Washington University in St. Louis, University of Science and Technology of China, Fudan University School of Management, NYU Shanghai, HKUST Business School, Northwestern University, Kellogg School of Management,
+        \item 2015-2016: Washington University in St. Louis, Carnegie Mellon University, Duke University, UNC Kenan-Flagler Business School, Indiana University, Yale School of Management, University of Michigan.
+    \end{innerlist}
+    
+    \item {\bf Company}
+    \begin{innerlist}
+        \item 2023-2024: Halara
+        \item 2021-2022: Amazon, Tiger Analytics
+        \item 2019-2020: Kuaishou (Kwai), TAL Education Group, Expedia Group
+        \item 2018-2019: Chehaoduo, Helijia, Kuaishou (Kwai), Alibaba Digital Economy Initiative
+        \item 2017-2018: Cainiao, Alibaba, VIPKID
+    \end{innerlist}
+
+\end{outerlist}
+
+\halfblankline
+
+\section{Media Coverage}
+\begin{enumerate}
+    \item ``3 Ways to Retrain Your Mind to Get Out of Credit Card Debt." Feburary 2020, {\em New York Times}
+    \item ``You’re Right. You’re Spending More Time Sitting on That Plane." September 2019, {\em New York Times}
+    \item ``Attention Passengers: Your Next Flight Will Likely Arrive Early. Here's Why. Turns out padding airline schedules is good for business." November 2018, {\em Inc.}
+    \item ``Atten­tion Pas­sen­gers: Your Next Flight Will Like­ly Arrive Ear­ly. Here’s Why." November 2018, {\em Kellogg Insight}
+    \item ``Why Kickstarter Funders Quickly Kick in the Last 5 Percent." August 2018, {\em UCLA Anderson Review}
+    \item ``Online Coupons Work in the Moment but Don’t Seem to Alter the Seller-Shopper Relationship." June 2018, {\em UCLA Anderson Review}
+    \item ``Want to Improve Your Sales Forecast? Check Your Company’s Facebook Feed." September 2017, {\em Kellogg Insight}
+	\item ``What Makes an Online Flash Sale Successful?" June 2017, {\em Kellogg Insight.}
+    \item ``No simple fix to weed out racial bias in the sharing economy," March 2017, {\em The Globe and Mail.}
+    \item ``New Research Looks At Ways To Help Stop Airbnb Racial Discrimination," March 2017, {\em National Public Radio (NPR).}
+    \item ``Study: How new Airbnb nondiscrimination policy may be worse," January 2017, {\em the Source, Washington University in St. Louis.}
+    \item ``A Gentle Nudge Can Increase Participation in MOOCs," December 2015, {\em Kellogg Insight.}
+	\item ``Could Email Fix A Troubled Form of Online Education?" December 2015, {\em ChicagoInno.}
+\end{enumerate}
+
+
+\section{Teaching Experience}
+\textbf{Washington University in St. Louis}
+\begin{outerlist}
+	\item Instructor for ``{\bf Artificial Intelligence and Machine Learning for Business Applications Part A Ver 2}" -- PhD Course, 2024.
+	\item Instructor for ``{\bf Artificial Intelligence and Machine Learning for Business Applications Part B}" -- PhD Course, 2023.
+	\item Instructor for ``{\bf Artificial Intelligence and Machine Learning for Business Applications Part A}" -- PhD Course, 2022.
+     \item Instructor for ``{\bf Data-Driven Decision Making for Executives}" -- Core EMBA Course at Washington University - IIT Mumbai EMBA Program, 2022, 2023, 2024.
+	\item Instructor for ``{\bf Data Analytics and Decisions}" -- Core EMBA Course at Washington University - Fudan University EMBA Program, 2021, 2022, 2023, 2024.
+    \item Instructor for ``{\bf Data-Driven Decision Making for Executives}" -- Core EMBA Course at Washington University in St Louis, 2021, 2022, 2023, 2024.
+    \item Instructor for ``{\bf Data Analytics for Government Leaders}" -- Executive Education at Brookings Institution, Washington DC (designed by me), 2019.
+    \item Instructor for ``{\bf Deep Learning for Business Strategy}" -- Executive Education at Center for Customer Analytics and Big Data (designed by me), 2018.
+	\item Instructor for ``{\bf Introduction to Data Science with Python}" -- Core Master of Business Analytics Class (co-designed with Jake Feldman), 2018 - 2022.
+	\item Instructor for ``{\bf Operations Management}" -- Core Undergraduate Class, 2016-2017.
+\end{outerlist}
+
+\halfblankline
+
+\halfblankline
+
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% End CV Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
