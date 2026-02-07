@@ -46,6 +46,7 @@ When I ask you to "update the CV" (without website changes), follow these steps:
 - Push: `git push origin main`
 
 ## Important Notes
+- **Whenever you push into the website you need to recompile the PDF**
 - Always update both the `.tex` source and the `.pdf` when making CV changes
 - Keep the LaTeX source in sync with the PDF to maintain version control
 - The website is hosted on GitHub Pages, so pushing to main will automatically update the live site
