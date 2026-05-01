@@ -2165,4 +2165,12 @@
 		text-shadow: none;
 	}
 
+	/* Links / accent — slightly brighter cyan for AA contrast on dark bg */
+	a {
+		color: #5cc8f5;
+	}
+	a:hover {
+		color: #7dd6ff !important;
+	}
+
 }
