@@ -2111,79 +2111,93 @@
 	}
 
 /* ============================================================
-   Dark mode (auto, follows OS preference via prefers-color-scheme).
-   All overrides live inside this single block. Removing the block
-   reverts to the original light-only theme.
+   Dark mode (toggleable). Applied via the .theme-dark class on
+   the <html> element. The class is set by the inline script in
+   index.html based on (a) localStorage preference, or (b) OS
+   prefers-color-scheme when no preference is stored. The toggle
+   button in the nav flips and persists the class.
    ============================================================ */
-@media (prefers-color-scheme: dark) {
 
-	/* Unified section backgrounds */
-	.wrapper.style1,
-	.wrapper.style3,
-	.wrapper.style4 {
-		background-color: #1a1a1a;
-	}
+/* Unified section backgrounds */
+html.theme-dark .wrapper.style1,
+html.theme-dark .wrapper.style3,
+html.theme-dark .wrapper.style4 {
+	background-color: #1a1a1a;
+}
 
-	/* Nav slightly darker than body to remain distinct */
-	#nav {
-		background-color: #141414;
-	}
+/* Nav slightly darker than body to remain distinct */
+html.theme-dark #nav {
+	background-color: #141414;
+}
 
-	/* Suppress paper-grain texture; flat dark color reads cleaner */
-	.wrapper {
-		background-image: none;
-	}
+/* Suppress paper-grain texture; flat dark color reads cleaner */
+html.theme-dark .wrapper {
+	background-image: none;
+}
 
-	/* Body and section text */
-	body {
-		color: #d0d0d0;
-	}
-	.wrapper.style3 {
-		color: #d0d0d0;
-	}
-	.wrapper.style4 {
-		color: #d0d0d0;
-	}
+/* Body and section text */
+html.theme-dark body {
+	color: #d0d0d0;
+}
+html.theme-dark .wrapper.style3 {
+	color: #d0d0d0;
+}
+html.theme-dark .wrapper.style4 {
+	color: #d0d0d0;
+}
 
-	/* Headings */
-	h1, h2, h3, h4, h5, h6 {
-		color: #f0f0f0;
-	}
-	.wrapper.style4 h1,
-	.wrapper.style4 h2,
-	.wrapper.style4 h3,
-	.wrapper.style4 h4,
-	.wrapper.style4 h5,
-	.wrapper.style4 h6 {
-		color: #f0f0f0;
-	}
+/* Headings */
+html.theme-dark h1,
+html.theme-dark h2,
+html.theme-dark h3,
+html.theme-dark h4,
+html.theme-dark h5,
+html.theme-dark h6 {
+	color: #f0f0f0;
+}
+html.theme-dark .wrapper.style4 h1,
+html.theme-dark .wrapper.style4 h2,
+html.theme-dark .wrapper.style4 h3,
+html.theme-dark .wrapper.style4 h4,
+html.theme-dark .wrapper.style4 h5,
+html.theme-dark .wrapper.style4 h6 {
+	color: #f0f0f0;
+}
 
-	/* Bold text — use heading brightness so emphasis remains visible */
-	b, strong {
-		color: #f0f0f0;
-	}
+/* Bold text — use heading brightness so emphasis remains visible */
+html.theme-dark b,
+html.theme-dark strong {
+	color: #f0f0f0;
+}
 
-	/* Suppress white halos from light-mode text-shadows */
-	.wrapper.style2,
-	.wrapper.style3,
-	.wrapper.style4 {
-		text-shadow: none;
-	}
+/* Suppress white halos from light-mode text-shadows */
+html.theme-dark .wrapper.style2,
+html.theme-dark .wrapper.style3,
+html.theme-dark .wrapper.style4 {
+	text-shadow: none;
+}
 
-	/* Links / accent — slightly brighter cyan for AA contrast on dark bg */
-	a {
-		color: #5cc8f5;
-	}
-	a:hover {
-		color: #7dd6ff !important;
-	}
+/* Links / accent — slightly brighter cyan for AA contrast on dark bg */
+html.theme-dark a {
+	color: #5cc8f5;
+}
+html.theme-dark a:hover {
+	color: #7dd6ff !important;
+}
 
-	/* Borders / dividers */
-	blockquote {
-		border-left-color: #2e2e2e;
-	}
-	hr {
-		border-top-color: #2e2e2e;
-	}
+/* Borders / dividers */
+html.theme-dark blockquote {
+	border-left-color: #2e2e2e;
+}
+html.theme-dark hr {
+	border-top-color: #2e2e2e;
+}
 
+/* Theme toggle button: moon glyph in light mode, sun in dark mode.
+   Icon via ::before so it appears on first paint with no JS flicker. */
+#theme-toggle::before {
+	content: '\263E'; /* ☾ — click to switch to dark */
+}
+html.theme-dark #theme-toggle::before {
+	content: '\2600'; /* ☀ — click to switch to light */
 }
