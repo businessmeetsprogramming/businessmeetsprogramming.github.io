@@ -2134,4 +2134,35 @@
 		background-image: none;
 	}
 
+	/* Body and section text */
+	body {
+		color: #d0d0d0;
+	}
+	.wrapper.style3 {
+		color: #d0d0d0;
+	}
+	.wrapper.style4 {
+		color: #d0d0d0;
+	}
+
+	/* Headings */
+	h1, h2, h3, h4, h5, h6 {
+		color: #f0f0f0;
+	}
+	.wrapper.style4 h1,
+	.wrapper.style4 h2,
+	.wrapper.style4 h3,
+	.wrapper.style4 h4,
+	.wrapper.style4 h5,
+	.wrapper.style4 h6 {
+		color: #f0f0f0;
+	}
+
+	/* Suppress white halos from light-mode text-shadows */
+	.wrapper.style2,
+	.wrapper.style3,
+	.wrapper.style4 {
+		text-shadow: none;
+	}
+
 }
