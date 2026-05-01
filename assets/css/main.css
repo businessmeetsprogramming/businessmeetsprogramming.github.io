@@ -2173,4 +2173,12 @@
 		color: #7dd6ff !important;
 	}
 
+	/* Borders / dividers */
+	blockquote {
+		border-left-color: #2e2e2e;
+	}
+	hr {
+		border-top-color: #2e2e2e;
+	}
+
 }
