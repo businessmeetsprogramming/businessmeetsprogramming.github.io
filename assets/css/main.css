@@ -2109,3 +2109,29 @@
 				}
 
 	}
+
+/* ============================================================
+   Dark mode (auto, follows OS preference via prefers-color-scheme).
+   All overrides live inside this single block. Removing the block
+   reverts to the original light-only theme.
+   ============================================================ */
+@media (prefers-color-scheme: dark) {
+
+	/* Unified section backgrounds */
+	.wrapper.style1,
+	.wrapper.style3,
+	.wrapper.style4 {
+		background-color: #1a1a1a;
+	}
+
+	/* Nav slightly darker than body to remain distinct */
+	#nav {
+		background-color: #141414;
+	}
+
+	/* Suppress paper-grain texture; flat dark color reads cleaner */
+	.wrapper {
+		background-image: none;
+	}
+
+}
